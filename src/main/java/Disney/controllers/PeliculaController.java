@@ -19,7 +19,7 @@ public class PeliculaController {
         return peliculaDao.crearPelicula(pelicula);
     }
 
-    @PutMapping("/{peliculaId}/students/{personajeId}")
+    @PutMapping("/{peliculaId}/peliculas/{personajeId}")
     public Pelicula addPersonajePelicula(
             @PathVariable Integer peliculaId,
             @PathVariable Integer personajeId
