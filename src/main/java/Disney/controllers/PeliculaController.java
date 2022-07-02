@@ -28,4 +28,10 @@ public class PeliculaController {
         return peliculaDao.asignarPersonaje(peliculaId, personajeId);
     }
 
+    @RequestMapping(value = "/eliminarPelicula/{id}", method = RequestMethod.DELETE)
+    public String eliminarPelicula(@PathVariable Integer id) {
+
+        return peliculaDao.eliminarPelicula(id);
+    }
+
 }

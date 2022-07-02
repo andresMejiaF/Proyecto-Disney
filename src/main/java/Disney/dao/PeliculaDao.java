@@ -9,4 +9,7 @@ public interface PeliculaDao {
     Pelicula crearPelicula(Pelicula pelicula);
 
     Pelicula asignarPersonaje(Integer peliculaId, Integer personajeId);
+
+    String eliminarPelicula(Integer id);
+
 }

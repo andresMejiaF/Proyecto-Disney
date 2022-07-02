@@ -36,4 +36,11 @@ public class PeliculaDaoImp implements PeliculaDao{
         return entityManager.merge(pelicula);
     }
 
+    @Override
+    public String eliminarPelicula(Integer id) {
+        Pelicula pelicula = entityManager.find(Pelicula.class, id);
+        entityManager.remove(pelicula);
+        return "Pelicula eliminada con exito";
+    }
+
 }
