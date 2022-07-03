@@ -26,4 +26,23 @@ public class PersonajeDaoImp implements PersonajeDao{
         entityManager.remove(personaje);
         return "Personaje eliminado con exito";
     }
+
+    @Override
+    public Personaje actualizarPersonaje(Personaje personaje, Integer id) {
+
+        Personaje personajeActual = entityManager.find(Personaje.class, id);
+        personajeActual.setEdad(personaje.getEdad());
+        personajeActual.setHistoria(personaje.getHistoria());
+        personajeActual.setImagen(personaje.getImagen());
+        personajeActual.setNombre(personaje.getNombre());
+        personajeActual.setPeso(personaje.getPeso());
+
+        return entityManager.merge(personajeActual);
+    }
+
+    @Override
+    public Personaje obtenerDetalle(Integer id) {
+        Personaje personaje = entityManager.find(Personaje.class, id);
+        return personaje;
+    }
 }

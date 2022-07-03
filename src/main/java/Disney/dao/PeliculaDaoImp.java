@@ -23,12 +23,7 @@ public class PeliculaDaoImp implements PeliculaDao{
 
     @Override
     public Pelicula asignarPersonaje(Integer peliculaId, Integer personajeId) {
-/*
-        Subject subject = subjectRepository.findById(subjectId).get();
-        Student student = studentRepository.findById(studentId).get();
-        subject.enrolledStudents.add(student);
 
- */
         Pelicula pelicula = entityManager.find(Pelicula.class, peliculaId);
         Personaje personaje = entityManager.find(Personaje.class, personajeId);
         pelicula.getPersonajes().add(personaje);

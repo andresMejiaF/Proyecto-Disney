@@ -52,7 +52,8 @@ public class Pelicula {
     )
     private Set<Personaje> personajes = new HashSet<>();
 
-    @ManyToOne
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Genero genero;
 
 }

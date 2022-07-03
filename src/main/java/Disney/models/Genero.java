@@ -25,7 +25,7 @@ public class Genero {
     private String nombre;
     private String imagen;
 
-    @OneToMany(mappedBy = "genero")
+    @OneToMany(mappedBy = "genero", cascade = CascadeType.ALL)
     @ToString.Exclude
     private List<Pelicula> peliculasAsociadas;
 }
