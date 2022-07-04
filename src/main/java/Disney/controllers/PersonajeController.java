@@ -5,6 +5,8 @@ import Disney.models.Personaje;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class PersonajeController {
 
@@ -32,6 +34,17 @@ public class PersonajeController {
     @RequestMapping (value = "/detallePersonaje/{id}", method = RequestMethod.GET)
     public Personaje obtenerDetallePersonaje( @PathVariable Integer id){
         return personajeDao.obtenerDetalle(id);
+    }
+
+
+    @RequestMapping (value = "/characters/{palabra}", method = RequestMethod.GET)
+    public List<Personaje> buscarPersonajeNombre (@PathVariable String palabra){
+        return  personajeDao.buscarPorNombre(palabra);
+    }
+
+    @RequestMapping (value = "/charactersEdad/{edad}", method = RequestMethod.GET)
+    public List<Personaje> buscarPersonajeEdad (@PathVariable Integer edad){
+        return  personajeDao.buscarPorEdad(edad);
     }
 
 }
