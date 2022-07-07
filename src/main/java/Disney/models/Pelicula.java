@@ -28,22 +28,6 @@ public class Pelicula {
     private float calificacion;
     private String imagen;
 
-   // @ManyToMany(mappedBy = "peliculas")
-    //@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-   // @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
-//  @ManyToMany( targetEntity = Personaje.class, cascade = CascadeType.ALL)
- /* @ManyToMany(cascade = {
-           CascadeType.PERSIST,
-           CascadeType.MERGE
-   })
-   @JoinTable(name = "pelicula_personaje",
-           joinColumns = @JoinColumn(name = "pelicula_id"),
-           inverseJoinColumns = @JoinColumn(name = "personaje_id")
-   )
-    @ToString.Exclude
-    private List<Personaje> personajes = new ArrayList<>();
-*/
-
     @ManyToMany
     @JoinTable(
             name = "pelicula_personaje",

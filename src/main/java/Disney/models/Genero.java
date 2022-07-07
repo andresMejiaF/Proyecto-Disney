@@ -16,9 +16,6 @@ import java.util.List;
 @Table(name = "Genero")
 public class Genero {
 
-    /*■ Nombre
-■ Imagen
-■ Películas o series asociadas*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
